@@ -35,7 +35,7 @@ CREATE TABLE [dbo].[Yorum](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Icerik] [varchar](500) NOT NULL,
 	[Yorumcu] [varchar](50) NOT NULL,
-	Puan tinyint,
+	Puan int,
 	[KonuId] [int] NOT NULL,
  CONSTRAINT [PK_Yorum] PRIMARY KEY CLUSTERED 
 (

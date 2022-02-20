@@ -1,0 +1,42 @@
+﻿@model KonuYorumCore.DataAccess.Yorum
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Yorum</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yorumcu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yorumcu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Puan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Puan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Konu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Konu.Baslik)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

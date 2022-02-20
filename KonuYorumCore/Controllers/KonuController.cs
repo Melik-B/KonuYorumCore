@@ -37,6 +37,16 @@ namespace KonuYorumCore.Controllers
 
                 return View(konu);
             }
+            if (konu.Baslik.Length > 100)
+            {
+                ViewBag.Mesaj = "Basşlık en fazla 100 karakter olmalıdır";
+                return View(konu);
+            }
+            if (!string.IsNullOrWhiteSpace(konu.Aciklama) && konu.Aciklama.Length > 200)
+            {
+                ViewBag.Mesaj = "Açıklama en fazla 200 karakter olmalıdır";
+                return View(konu);
+            }
             _db.Konu.Add(konu);
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -76,6 +86,17 @@ namespace KonuYorumCore.Controllers
             _db.Konu.Update(konu);
             _db.SaveChanges();
             return RedirectToAction("Index");
+
+            if (konu.Baslik.Length > 100)
+            {
+                ViewBag.Mesaj = "Basşlık en fazla 100 karakter olmalıdır";
+                return View(konu);
+            }
+            if (!string.IsNullOrWhiteSpace(konu.Aciklama) && konu.Aciklama.Length > 200)
+            {
+                ViewBag.Mesaj = "Açıklama en fazla 200 karakter olmalıdır";
+                return View(konu);
+            }
         }
 
         public IActionResult Delete(int id)

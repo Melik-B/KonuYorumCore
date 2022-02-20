@@ -1,0 +1,50 @@
+﻿@model KonuYorumCore.DataAccess.Yorum
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Yorum</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Icerik" class="control-label"></label>
+                <input asp-for="Icerik" class="form-control" />
+                <span asp-validation-for="Icerik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yorumcu" class="control-label"></label>
+                <input asp-for="Yorumcu" class="form-control" />
+                <span asp-validation-for="Yorumcu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Puan" class="control-label"></label>
+                <input asp-for="Puan" class="form-control" />
+                <span asp-validation-for="Puan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="KonuId" class="control-label"></label>*@
+                <label asp-for="Konu" class="control-label"></label>
+
+                <select asp-for="KonuId" class="form-control" asp-items="@ViewBag.KonuId"></select>
+            </div>
+            @if (ViewBag.Mesaj != null)
+            {
+                @ViewBag.Mesaj.ToString()
+                ;
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
