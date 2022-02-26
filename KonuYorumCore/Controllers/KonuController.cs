@@ -83,9 +83,6 @@ namespace KonuYorumCore.Controllers
 
                 return View(konu);
             }
-            _db.Konu.Update(konu);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
 
             if (konu.Baslik.Length > 100)
             {
@@ -97,6 +94,13 @@ namespace KonuYorumCore.Controllers
                 ViewBag.Mesaj = "Açıklama en fazla 200 karakter olmalıdır";
                 return View(konu);
             }
+
+            Konu mevcutKonu = _db.Konu.SingleOrDefault(mevcutKonu => mevcutKonu.Id == mevcutKonu.Id);
+            mevcutKonu.Baslik = konu.Baslik;
+            mevcutKonu.Aciklama = konu.Aciklama;
+            _db.Konu.Update(mevcutKonu);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
