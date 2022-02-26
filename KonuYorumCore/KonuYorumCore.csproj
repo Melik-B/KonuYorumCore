@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ScaffoldingTemplates\ControllerGenerator\**" />
+    <Compile Remove="ScaffoldingTemplates\ViewGenerator\**" />
+    <Content Remove="ScaffoldingTemplates\ControllerGenerator\**" />
+    <Content Remove="ScaffoldingTemplates\ViewGenerator\**" />
+    <EmbeddedResource Remove="ScaffoldingTemplates\ControllerGenerator\**" />
+    <EmbeddedResource Remove="ScaffoldingTemplates\ViewGenerator\**" />
+    <None Remove="ScaffoldingTemplates\ControllerGenerator\**" />
+    <None Remove="ScaffoldingTemplates\ViewGenerator\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
       <PrivateAssets>all</PrivateAssets>

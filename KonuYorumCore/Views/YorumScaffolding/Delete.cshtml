@@ -1,0 +1,46 @@
+﻿@model KonuYorumCore.DataAccess.Yorum
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Yorum</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Yorumcu)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Yorumcu)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Puan)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Puan)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Konu)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Konu.Baslik)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+	@Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Yes" class="btn btn-danger" />&nbsp;&nbsp;
+        <a asp-action="Index" class="btn btn-success">No</a>
+    </form>
+</div>

@@ -137,5 +137,22 @@ namespace KonuYorumCore.Controllers
             TempData["YorumMesaj"] = "Yorum başarıyla güncellendi.";
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            Yorum yorum = _db.Yorum.Include(yorum => yorum.Konu).SingleOrDefault(yorum => yorum.Id == id);
+            return View(yorum);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public IActionResult Yagiz(int id) //DeleteConfrimed -- /Yorum/Delete
+        {
+            Yorum yorum = _db.Yorum.Find(id);
+            _db.Yorum.Remove(yorum);
+            _db.SaveChanges();
+            TempData["YorumMesaj"] = "Yorum başarıyla silindi";
+            return RedirectToAction("Index");
+        }
     }
 }

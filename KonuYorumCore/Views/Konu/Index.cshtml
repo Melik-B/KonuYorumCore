@@ -11,6 +11,8 @@
 
 <h1><b>Konular</b></h1>
 
+<h1>YAĞIZ ABİNİN TASARIMINDAN DAHA İYİ</h1>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -41,10 +43,10 @@
                     @Html.DisplayFor(modelItem => item.Aciklama)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                    <a asp-area="" asp-controller="Yorum" asp-action="Create">Yorum Yap</a>
+                    <a style="color:black;" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a style="color:black;" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a style="color:black;" asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                    <a style="color:black;" asp-area="" asp-controller="Yorum" asp-action="Create">Yorum Yap</a>
                 </td>
             </tr>
         }

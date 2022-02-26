@@ -1,0 +1,30 @@
+﻿@model KonuYorumCore.DataAccess.Konu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Konu</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>&nbsp;|&nbsp;
+    <a asp-action="Index">Back to List</a>
+</div>
