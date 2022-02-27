@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<KonuYorumCore.DataAccess.Konu>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gündem";
 }
 
 @*@if (TempData["Mesaj"] != null)
@@ -9,9 +9,7 @@
     @TempData["Mesaj"].ToString()
     }*@
 
-<h1><b>Konular</b></h1>
-
-<h1>YAĞIZ ABİNİN TASARIMINDAN DAHA İYİ</h1>
+<h1 style="color:white">Gündem</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -19,13 +17,13 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Baslik)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Aciklama)
             </th>
-            <th></th>
+            <th style="color:white"></th>
         </tr>
     </thead>
     <tbody>

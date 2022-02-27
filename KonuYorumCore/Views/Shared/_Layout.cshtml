@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Emine Erdoğan sözlük</title>
+    <title>@ViewData["Title"] - Ekşi sözlük pro edition</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/KonuYorumCore.styles.css" asp-append-version="true" />
@@ -16,13 +16,13 @@
     </style>*@
 
 <body>
-    <Body background="https://www.cumhuriyet.com.tr/Archive/2021/6/30/1848737/kapak_195859.png" style="background-repeat: no-repeat; background-size: cover;">
+    <Body background="https://wallpaperaccess.com/full/84248.png" style="background-repeat: no-repeat; background-size: cover; ">
 
     </Body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Emine Erdoğan sözlük</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ekşi sözlük pro edition</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,16 +44,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Yorum" asp-action="Index">Yorumlar</a>
                         </li>
 
-                        <li class="nav-item">
+@*                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="KonuScaffolding" asp-action="Index">Konular (Scaffolding)</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="YorumScaffolding" asp-action="Index">Yorumlar (Scaffolding)</a>
+                        </li>*@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="KonularYorumlarJoin" asp-action="InnerJoin">Konular Yorumlar Inner Join</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="YorumlarKonularJoin" asp-action="Index">Konular Yorumlar Join</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="KonularYorumlarJoin" asp-action="LeftOuterJoin">Konular Yorumlar Left Outer Join</a>
                         </li>
                     </ul>
                 </div>
@@ -67,8 +71,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Ekşis sözlük pro edition - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div style="color:white" class="container">
+            &copy; 2022 - Ekşi sözlük pro edition - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
